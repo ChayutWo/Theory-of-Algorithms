@@ -16,7 +16,7 @@ def SelectionSort(listToSort):
     Function Name: SelectionSort
     Objective: Perform sorting of the input array using Selection Sort algorithm
     Description: Loop through input array
-                 Select the minimum of the unsorted portion
+                 Select the minimum element of the unsorted portion
                  Correctly place it in the sorted portion
     Input: listToSort - A non-empty array of positive integer length.
                         The elements of the array must be comparable.
@@ -177,8 +177,8 @@ def QuickSort(listToSort, i=0, j=None):
     """
     Function Name: QuickSort
     Objective: Perform sorting of the input array from index i to j-1 inclusive
-               using Selection Sort algorithm
-    Description: Choose a pivot element (jth element in this implementation)
+               using Quick Sort algorithm
+    Description: Choose a pivot element (last element in this implementation)
                  Partition the array. Put smaller items before the pivot and larger after
                  Recursively perform the first two step on each partition
     Input: listToSort - A non-empty array of positive integer length.
