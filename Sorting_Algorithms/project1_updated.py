@@ -3,7 +3,7 @@ Math 590
 Project 1: Sorting Algorithms
 Fall 2019
 
-Partner 1: Chayut Wongkamthong
+Partner 1: Chayut Wongkamthong netid: cw403
 Partner 2: NA
 Date: 10/19/2019
 """
