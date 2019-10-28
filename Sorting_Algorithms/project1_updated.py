@@ -10,18 +10,15 @@ Date: 10/19/2019
 
 """
 SelectionSort
+Objective: Perform sorting of the input array using Selection Sort algorithm
+Description: Loop through input array
+             Select the minimum element of the unsorted portion
+             Correctly place it in the sorted portion
+Input: listToSort - A non-empty array of positive integer length.
+                    The elements of the array must be comparable.
+Expected Output: A sorted array in an ascending order.
 """
 def SelectionSort(listToSort):
-    """
-    Function Name: SelectionSort
-    Objective: Perform sorting of the input array using Selection Sort algorithm
-    Description: Loop through input array
-                 Select the minimum element of the unsorted portion
-                 Correctly place it in the sorted portion
-    Input: listToSort - A non-empty array of positive integer length.
-                        The elements of the array must be comparable.
-    Expected Output: A sorted array in an ascending order.
-    """
 
     # Loop through the array and keep increasing the index to be sorted
     for sortedIndex in range(len(listToSort)):
@@ -44,18 +41,15 @@ def SelectionSort(listToSort):
 
 """
 InsertionSort
+Objective: Perform sorting of the input array using Insertion Sort algorithm
+Description: Loop through input array
+             Consider each element from left to right
+             Exchange it with elements to its left until it is in place
+Input: listToSort - A non-empty array of positive integer length.
+                    The elements of the array must be comparable.
+Expected Output: A sorted array in an ascending order.
 """
 def InsertionSort(listToSort):
-    """
-    Function Name: InsertionSort
-    Objective: Perform sorting of the input array using Insertion Sort algorithm
-    Description: Loop through input array
-                 Consider each element from left to right
-                 Exchange it with elements to its left until it is in place
-    Input: listToSort - A non-empty array of positive integer length.
-                        The elements of the array must be comparable.
-    Expected Output: A sorted array in an ascending order.
-    """
 
     # Loop through the array and keep increasing the index to be sorted
     for sortedIndex in range(1,len(listToSort)):
@@ -74,17 +68,14 @@ def InsertionSort(listToSort):
 
 """
 BubbleSort
+Objective: Perform sorting of the input array using Bubble Sort algorithm
+Description: Scan and swap any adjacent elements that are out of order
+             Repeat until no more pairs are swapped in the loop
+Input: listToSort - A non-empty array of positive integer length.
+                    The elements of the array must be comparable.
+Expected Output: A sorted array in an ascending order.
 """
 def BubbleSort(listToSort):
-    """
-    Function Name: BubbleSort
-    Objective: Perform sorting of the input array using Bubble Sort algorithm
-    Description: Scan and swap any adjacent elements that are out of order
-                 Repeat until no more pairs are swapped in the loop
-    Input: listToSort - A non-empty array of positive integer length.
-                        The elements of the array must be comparable.
-    Expected Output: A sorted array in an ascending order.
-    """
 
     # Set up counter (k) and boolean swap to check whether we perform
     # any swap in the loop or not
@@ -107,18 +98,15 @@ def BubbleSort(listToSort):
 
 """
 MergeSort
+Objective: Perform sorting of the input array using Merge Sort algorithm
+Description: Split array into halves
+             Recursively sort each half
+             Merge them back in the correct order
+Input: listToSort - A non-empty array of positive integer length.
+                    The elements of the array must be comparable.
+Expected Output: A sorted array in an ascending order.
 """
 def MergeSort(listToSort):
-    """
-    Function Name: MergeSort
-    Objective: Perform sorting of the input array using Merge Sort algorithm
-    Description: Split array into halves
-                 Recursively sort each half
-                 Merge them back in the correct order
-    Input: listToSort - A non-empty array of positive integer length.
-                        The elements of the array must be comparable.
-    Expected Output: A sorted array in an ascending order.
-    """
 
     # If the array is singleton, it is already sorted
     if len(listToSort) < 2:
@@ -172,22 +160,19 @@ QuickSort
 
 Sort a list with the call QuickSort(listToSort),
 or additionally specify i and j.
+Objective: Perform sorting of the input array from index i to j-1 inclusive
+           using Quick Sort algorithm
+Description: Choose a pivot element (last element in this implementation)
+             Partition the array. Put smaller items before the pivot and larger after
+             Recursively perform the first two step on each partition
+Input: listToSort - A non-empty array of positive integer length.
+                    The elements of the array must be comparable.
+       i - start index to be sorted (inclusive)
+       j - end index to be sorted (exclusive)
+Expected Output: A sorted array in an ascending order in position i
+                 up to but not include j.
 """
 def QuickSort(listToSort, i=0, j=None):
-    """
-    Function Name: QuickSort
-    Objective: Perform sorting of the input array from index i to j-1 inclusive
-               using Quick Sort algorithm
-    Description: Choose a pivot element (last element in this implementation)
-                 Partition the array. Put smaller items before the pivot and larger after
-                 Recursively perform the first two step on each partition
-    Input: listToSort - A non-empty array of positive integer length.
-                        The elements of the array must be comparable.
-           i - start index to be sorted (inclusive)
-           j - end index to be sorted (exclusive)
-    Expected Output: A sorted array in an ascending order in position i
-                     up to but not include j.
-    """
 
     # Set default value for j if None.
     if j == None:
