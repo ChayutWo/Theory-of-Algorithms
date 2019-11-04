@@ -6,13 +6,14 @@ Fall 2019
 p2Maze.py
 """
 
-# Import math, other p2 files, and plotting.
+# Import math, other p2 files, plotting, and Wilson's.
 import math
 from project2 import bdfs
 import matplotlib.pyplot as plt
 from matplotlib import cm
 from matplotlib.colors import ListedColormap, LinearSegmentedColormap
 import numpy as np
+from p2wilson import *
 
 """
 Vertex Class
@@ -76,11 +77,17 @@ class Maze:
 
     """
     __init__ function to initialize the maze.
+
+    INPUTS
+    mazeNum:   which maze to select.
+    verbosity: a flag to control printing, where False prints less.
+    numRooms:  if mazeNum=4, then set the size of the maze, which will
+               be 2*numRooms+1.
     """
-    def __init__(self, mazeNum=0, verbosity=False):
+    def __init__(self, mazeNum=0, verbosity=False, numRooms=12):
 
         # Select the maze to use.
-        self.maze = getMaze(mazeNum)
+        self.maze = getMaze(mazeNum, numRooms)
 
         # Create an adjacency list of empty vertices.
         self.adjList = [Vertex(r) for r in \
@@ -166,7 +173,7 @@ class Maze:
         return
 
     """
-    __repr function to print the maze.
+    __repr__ function to print the maze.
     """
     def __repr__(self):
         # Loop through the rows and cols of the maze and fill in 'X' for a wall
@@ -335,12 +342,14 @@ getMaze function will provide the 2D array representing the maze to the Maze
 class's __init__ function.
 
 INPUTS
-mazeNum: which maze to select
+mazeNum:  which maze to select
+numRooms: the number of rooms in the maze, only for mazeNum=4
+          Note: the size of the maze is 2*numRooms+1 in each dimension
 
 OUTPUTS
 maze: a 2D list representing the maze
 """
-def getMaze(mazeNum=0):
+def getMaze(mazeNum=0, numRooms=12):
     # Select the maze to use.
     if mazeNum == 0:
         maze = [[1,1,0,1,1],\
@@ -406,6 +415,8 @@ def getMaze(mazeNum=0):
                 [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1],\
                 [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],\
                 [1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]]
+    elif mazeNum == 4:
+        maze = createRandMaze(numRooms)
     else:
         raise Exception('Input mazeNum not valid!')
 

@@ -30,6 +30,8 @@ def bdfs(maze, alg):
         raise Exception('Incorrect alg! Need BFS or DFS!')
 
     ##### Your implementation goes here. #####
+    # If the algorithm is BFS, create a queue
+    # Else, it is DFS, create a stack
     elif alg == 'BFS':
         visitList = Queue()
     else:
