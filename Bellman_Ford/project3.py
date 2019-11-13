@@ -19,7 +19,8 @@ detectArbitrage
 Objective: Perform Bellman-Ford Algorithm to detect Arbitrage
 Input: currencies - the Currencies object for the exchange rate
        tol - update tolerance
-Expected output: A list containing ranks of vertices that result in Arbitrage
+Expected output: A list containing ranks of vertices forming cycle that results
+                 in Arbitrage
                  If Arbitrage doesn't exist, return empty list
 """
 def detectArbitrage(currencies, tol=1e-15):
@@ -78,6 +79,8 @@ def detectArbitrage(currencies, tol=1e-15):
                 foundLoopEnd = True
             else:
                 index += 1
+        # Put our starting point into the cycle list and extract the list
+        # for parts that contain true cycle (upto index position)
         cycle = [changeVertex.rank] + cycle[:index+1]
     return cycle
     ##### Your implementation goes here. #####
